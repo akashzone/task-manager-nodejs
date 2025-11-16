@@ -7,6 +7,22 @@
 body {
     font-family: Arial, sans-serif;
 }
+/* THEME CHANGER */
+
+.theme-btn {
+  background: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+body.dark .theme-btn {
+  background: black;
+  color: white;
+}
 
 /* NAVBAR */
 nav {
@@ -24,6 +40,10 @@ nav {
 }
 
 /* NAV LINKS */
+.nav-links{
+    display: flex;
+    align-items: center;            
+}
 .nav-links ul {
     list-style: none;
     display: flex;
@@ -43,7 +63,7 @@ nav .nav-links .add-btn {
     color: rgb(70, 70, 206);
     border-radius: 6px;
     font-weight: bold;
-    margin-right: 50px;
+    margin-right: 5px;
 }
 
 nav .nav-links .add-btn:hover {
@@ -145,4 +165,75 @@ input[type="checkbox"] {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+
+/* ----- Dark Mode Styles ----- */
+
+.theme-btn {
+  background: white;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  margin-right: 30px;
+}
+
+body.dark .theme-btn {
+  background: #2b2b2b;
+  color: white;
+}
+
+body.dark {
+  background-color: #1f1f1f;
+  color: white;
+}
+
+body.dark nav {
+  background-color: #2b2b2b;
+}
+
+body.dark .main-section {
+  background-color: #2b2b2b;
+  color: white;
+  border: 1px solid #444;
+}
+
+body.dark .delete-btn i {
+  color: #ff7b7b;
+}
+
+body.dark input[type="checkbox"] {
+  accent-color: white;
+}
+
+body.dark .nav-links ul li a {
+  color: white;
+  background-color: #2b2b2b;
+}
+
+body.dark nav .nav-links .add-btn:hover {
+  background: #555;
+}
+body.dark .fa-trash{
+  color: #ff7b7b !important;
+} 
+
+body.dark main{
+  background-color: gray;
+}
+
+body.dark .todo-item {
+  border-bottom: 1px solid #444;
+}
+
+body.dark .completed {
+  color: #bbb;
+}
+
+body.dark #del-btn {
+  background-color: #444;
+  border: 1px solid #666;
+  color: white;
 }
