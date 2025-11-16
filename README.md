@@ -37,7 +37,6 @@ More features like delete, edit, and improved UI will be added soon.
 
 📌 Planned Features (Coming Soon)
 
-Delete a task
 
 Edit/update tasks
 
@@ -56,4 +55,6 @@ Created by Akash as a learning project while practicing full-stack development.
 
 Screenshots : 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a748632f-d681-4c75-a2fa-0898b9e1a945" />
+<img width="1894" height="910" alt="image" src="https://github.com/user-attachments/assets/18c1b9f1-f16e-4fec-882c-629f4f312d5f" />
+
 
