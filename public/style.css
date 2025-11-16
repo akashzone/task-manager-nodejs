@@ -50,25 +50,25 @@ nav .nav-links .add-btn:hover {
     background: rgb(230, 230, 255);
 }
 
-
+/* Main Section */
 main {
     height: 100vh;
     background-color: rgb(131, 131, 229);
 
     display: flex;
-    justify-content: center;   /* center horizontally */
-    align-items: flex-start;    /* or center vertically with "center" */
-    padding-top: 50px;          /* spacing from top */
+    justify-content: center; 
+    align-items: flex-start;  
+    padding-top: 50px;          
 }
 
 
 .main-section {
     width: 65%;
     max-width: 500px;
-    height: 50%;      /* looks cleaner */
+    height: 50%;     
     background-color: white;
     padding: 20px;
-    border-radius: 10px;   /* smooth corners */
+    border-radius: 10px;  
     box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.1);
 }
 
@@ -89,10 +89,12 @@ main {
     font-size: 1.3rem;
 }
 
-
+.main-section ul {
+    margin-top: 20px;
+}
 .main-section ul li {
     list-style: none;
-    padding: 12px 0;
+    padding: 4px 0;
     border-bottom: 1px solid #eee;
     font-size: 1.1rem;
     display: flex;
@@ -109,6 +111,24 @@ main {
   color: black !important;
 }
 
-.completed{
-    text-decoration: line-through;
+/* Checkbox Style LineThrough */
+.completed {
+  text-decoration: line-through;
+  color: gray;
+}
+
+input[type="checkbox"] {
+  transform: scale(2);
+  cursor: pointer;
+}
+
+#del-btn {
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgb(131, 131, 229);;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 10px 15px;
 }

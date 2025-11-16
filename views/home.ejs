@@ -32,16 +32,31 @@
         </div>
         <ul>
           <% for (let u of users) { %>
-          <form action="/complete/<%= u.id %>" method="post">
-            <li>
-              <input type="checkbox" onchange="this.form.submit" <%=
-              u.is_completed ? 'checked' : '' %> >
+          <li>
+            <!-- COMPLETE FORM -->
+            <form
+              action="/complete/<%= u.id %>"
+              method="post"
+              style="display: inline"
+            >
+              <input id="checkbox" type="checkbox" onchange="this.form.submit()"
+              <%= u.is_completed ? 'checked' : '' %> >
+            </form>
 
-              <span class="<%= u.is_completed ? 'completed' : '' %>">
-                <%= u.title %>
-              </span>
-            </li>
-          </form>
+            <!-- TITLE -->
+            <span class="<%= u.is_completed ? 'completed' : '' %>">
+              <%= u.title %>
+            </span>
+
+            <!-- DELETE FORM -->
+            <form
+              action="/delete/<%= u.id %>"
+              method="get"
+              style="display: inline"
+            >
+              <button id="del-btn">Delete</button>
+            </form>
+          </li>
           <% } %>
         </ul>
       </div>

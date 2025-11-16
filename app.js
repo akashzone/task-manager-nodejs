@@ -54,22 +54,32 @@ app.post("/add-tasks", (req, res) => {
     res.redirect("/");
   });
 });
-app.post("/complete/:id",(req,res)=>{
-    app.post("/complete/:id", (req, res) => {
+
+app.post("/complete/:id", (req, res) => {
   const id = req.params.id;
 
   const q = "UPDATE tasks SET is_completed = NOT is_completed WHERE id = ?";
 
   connection.query(q, [id], () => {
     res.redirect("/");
+    });
+  });
+
+
+app.get("/delete/:id",async (req, res) => {
+  const id = req.params.id;
+  const q = "DELETE FROM tasks WHERE id = ?";
+
+  connection.query(q, [id], (err, result) => {
+    if (err) throw err;
+    res.redirect("/");
   });
 });
 
-})
 
 app.get("/add-tasks",(req,res)=>{
     res.render("add");
-})
+});
 app.listen(port, () => {
   console.log("Server is live");
 });
