@@ -28,35 +28,25 @@
       <div class="main-section">
         <div class="main-1">
           <span class="main-head">Todo List</span>
+         <a href="/delete-all""> 
           <i class="fa-solid fa-trash"></i>
+        </a>
         </div>
         <ul>
           <% for (let u of users) { %>
-          <li>
-            <!-- COMPLETE FORM -->
-            <form
-              action="/complete/<%= u.id %>"
-              method="post"
-              style="display: inline"
-            >
-              <input id="checkbox" type="checkbox" onchange="this.form.submit()"
-              <%= u.is_completed ? 'checked' : '' %> >
-            </form>
+          <li class="todo-item">
+  <div class="left">
+    <form action="/complete/<%= u.id %>" method="post">
+      <input type="checkbox" onchange="this.form.submit()" <%= u.is_completed ? 'checked' : '' %>>
+    </form>
+    <span class="<%= u.is_completed ? 'completed' : '' %>"><%= u.title %></span>
+  </div>
 
-            <!-- TITLE -->
-            <span class="<%= u.is_completed ? 'completed' : '' %>">
-              <%= u.title %>
-            </span>
+  <form action="/delete/<%= u.id %>" method="get">
+    <button id="del-btn">Delete</button>
+  </form>
+</li>
 
-            <!-- DELETE FORM -->
-            <form
-              action="/delete/<%= u.id %>"
-              method="get"
-              style="display: inline"
-            >
-              <button id="del-btn">Delete</button>
-            </form>
-          </li>
           <% } %>
         </ul>
       </div>

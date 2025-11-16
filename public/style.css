@@ -65,11 +65,11 @@ main {
 .main-section {
     width: 65%;
     max-width: 500px;
-    height: 50%;     
+    height: 450px;         /* fixed height */
+    overflow-y: auto;      /* scroll tasks */
     background-color: white;
     padding: 20px;
-    border-radius: 10px;  
-    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
 .main-section .main-1 {
@@ -131,4 +131,18 @@ input[type="checkbox"] {
     font-size: 1rem;
     cursor: pointer;
     padding: 10px 15px;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.todo-item .left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }

@@ -43,8 +43,13 @@ app.get("/", (req, res) => {
 });
 
 app.post("/add-tasks", (req, res) => {
+  
   let { task } = req.body;  
-  console.log(task);
+  if(task === ""){
+    res.send("Please enter a valid task!");
+    return;
+  }
+  // console.log(task);
 
   let q = "INSERT INTO tasks(title) VALUES (?)";
 
@@ -76,6 +81,14 @@ app.get("/delete/:id",async (req, res) => {
   });
 });
 
+app.get("/delete-all",async (req, res) => {
+  const q = "TRUNCATE TABLE tasks";
+
+  connection.query(q, (err, result) => {
+    if (err) throw err;
+    res.redirect("/");
+  });
+});
 
 app.get("/add-tasks",(req,res)=>{
     res.render("add");
