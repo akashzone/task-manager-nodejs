@@ -11,7 +11,8 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 
 
-let port = 8080;
+const port = process.env.PORT || 8080;
+
 
 const mysql = require("mysql2");
 
