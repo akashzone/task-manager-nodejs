@@ -8,5 +8,4 @@ CREATE TABLE tasks (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- INSERT INTO tasks(title) value("Eat"),("Code");
 
