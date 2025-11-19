@@ -19,7 +19,7 @@
         <div class="nav-links">
           <ul>
             <li><a href="/home">Home</a></li>
-            <li><a href="/add-tasks" class="add-btn">Add tasks</a></li>
+            <li><a href="/contact" class="contact-us">Contact us</a></li>
           </ul>
             <button id="theme-toggle" class="theme-btn">🌙</button>
         </div>
@@ -33,23 +33,31 @@
           <i class="fa-solid fa-trash"></i>
         </a>
         </div>
-        <ul>
-          <% for (let u of users) { %>
-          <li class="todo-item">
-  <div class="left">
-    <form action="/complete/<%= u.id %>" method="post">
-      <input type="checkbox" onchange="this.form.submit()" <%= u.is_completed ? 'checked' : '' %>>
-    </form>
-    <span class="<%= u.is_completed ? 'completed' : '' %>"><%= u.title %></span>
+        <div class="input-section">
+          <form id="taskForm">
+          <input type="text" placeholder="eg.Eat,Sleep,Code.." id="taskInput"/>
+          <button type="submit" class="add-btn">Add</button>
+          </form>
+        </div>
+         <div class="taskSection">
+          <ul id="taskList">
+            <% tasks.forEach(t =>{ %> 
+              <li> 
+  <div class="task-left">
+    <input type="checkbox" class="task-check" data-id="<%= t.id %>" <%= t.is_completed ? "checked" : "" %>/>
+    <span class="task-text <%= t.is_completed ? 'completed' : '' %>">
+      <%= t.title %>
+    </span>
   </div>
 
-  <form action="/delete/<%= u.id %>" method="get">
-    <button id="del-btn">Delete</button>
+  <form action="/delete/<%= t.id %>" method="get" style="display:inline;">
+    <button type="submit" id="del-btn">Remove</button>
   </form>
 </li>
 
-          <% } %>
-        </ul>
+            <% }); %>
+          </ul>
+         </div>
       </div>
     </main>
     <script src="script.js"></script>

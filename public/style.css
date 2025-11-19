@@ -41,6 +41,7 @@ nav {
 
 /* NAV LINKS */
 .nav-links{
+  height: 65px;
     display: flex;
     align-items: center;            
 }
@@ -53,22 +54,15 @@ nav {
 .nav-links ul li a {
     color: white;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 500;
 }
 
-nav .nav-links .add-btn {
-    padding: 8px 16px;
-    background: white;
-    color: rgb(70, 70, 206);
-    border-radius: 6px;
-    font-weight: bold;
-    margin-right: 5px;
+.nav-links ul li a:hover {
+    /* text-decoration: underline; */
+    color: #ddd;
 }
 
-nav .nav-links .add-btn:hover {
-    background: rgb(230, 230, 255);
-}
 
 /* Main Section */
 main {
@@ -113,14 +107,22 @@ main {
     margin-top: 20px;
 }
 .main-section ul li {
-    list-style: none;
-    padding: 4px 0;
-    border-bottom: 1px solid #eee;
-    font-size: 1.1rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  list-style: none;
+  padding: 10px 0;
+  margin-bottom: 5px;
+
+  display: flex;
+  justify-content: space-between;   /* KEY FIX */
+  align-items: center;
 }
+
+.task-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+
 
 .main-section ul li i {
     color: #555;
@@ -144,13 +146,18 @@ input[type="checkbox"] {
 
 #del-btn {
     background-color: transparent;
-    border: 1px solid black;
+    border: none;
     border-radius: 5px;
     background-color: rgb(131, 131, 229);;
     color: white;
     font-size: 1rem;
     cursor: pointer;
     padding: 10px 15px;
+}
+
+#del-btn:hover {
+    background-color: rgb(110, 110, 210);
+    box-shadow: 0 3px 8px rgba(100, 100, 200, 0.4);
 }
 
 .todo-item {
@@ -168,14 +175,70 @@ input[type="checkbox"] {
 }
 
 
+.add-btn {
+  padding: 12px 18px;
+  border-radius: 8px;
+  border: none;
+  background-color: rgb(131, 131, 229);
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.add-btn:hover {
+  background-color: rgb(110, 110, 210);
+  box-shadow: 0 3px 8px rgba(100, 100, 200, 0.4);
+}
+
+/* Input Section */
+
+.input-section {
+  margin-top: 20px;
+}
+
+#taskForm {
+  display: flex;
+  gap: 10px;
+}
+
+#taskInput {
+  flex: 1;
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 2px solid #dcdcdc;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+/* On focus */
+#taskInput:focus {
+  border-color: rgb(131, 131, 229);   /* purple border */
+  box-shadow: 0 0 5px rgba(131, 131, 229, 0.5);
+}
+
+/* Placeholder style */
+#taskInput::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+/* Input hover */
+#taskInput:hover {
+  border-color: #b5b5ff;
+}
+
+
 /* ----- Dark Mode Styles ----- */
 
 .theme-btn {
-  background: white;
+  background:rgb(70, 70, 206);
   border: none;
-  padding: 10px 10px;
+  padding: 2px 3px 11px 1px;
   border-radius: 6px;
-  font-size: 12px;
+  font-size: 25px;
   cursor: pointer;
   margin-right: 30px;
 }
@@ -199,7 +262,10 @@ body.dark .main-section {
   color: white;
   border: 1px solid #444;
 }
-
+body.dark .add-btn{
+  background-color: #444;
+  color: white;
+}
 body.dark .delete-btn i {
   color: #ff7b7b;
 }
